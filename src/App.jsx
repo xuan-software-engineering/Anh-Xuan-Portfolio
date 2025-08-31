@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -8,8 +8,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
-  // Custom hook for fade-in on scroll
-
   const [activeSection, setActiveSection] = useState("home");
 
   const sections = [
