@@ -40,6 +40,15 @@ Dự án này sử dụng GitHub Actions để tự động hóa quy trình deve
 - **Lint & Test**: Kiểm tra code quality và build project
 - **Deploy**: Tự động deploy lên GitHub Pages khi push vào main branch
 
+### Quy trình hoạt động
+
+1. **Push code** vào `main` branch
+2. **GitHub Actions** tự động trigger
+3. **Lint & Test** job chạy trước
+4. **Deploy** job chạy sau khi test thành công
+5. **Website** được deploy lên `gh-pages` branch
+6. **GitHub Pages** serve website từ `gh-pages` branch
+
 ### Các platform deployment khác
 
 #### Netlify
@@ -74,3 +83,28 @@ src/
 
 - **Netlify**: Kết nối repository và sử dụng `netlify.toml`
 - **Vercel**: Kết nối repository và sử dụng `vercel.json`
+
+## 🔧 Troubleshooting
+
+### Nếu deployment thất bại:
+
+1. **Kiểm tra GitHub Actions**:
+
+   - Vào tab Actions trong repository
+   - Xem log của workflow để tìm lỗi
+
+2. **Kiểm tra cấu hình**:
+
+   - Đảm bảo `base: "/Anh-Xuan-Portfolio/"` trong `vite.config.js`
+   - Kiểm tra `homepage` trong `package.json`
+
+3. **Chạy deploy script thủ công**:
+
+   ```bash
+   chmod +x deploy.sh
+   ./deploy.sh
+   ```
+
+4. **Kiểm tra GitHub Pages settings**:
+   - Settings > Pages > Source: GitHub Actions
+   - Đảm bảo repository có quyền deploy
