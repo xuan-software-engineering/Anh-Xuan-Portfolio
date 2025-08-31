@@ -49,18 +49,6 @@ Dự án này sử dụng GitHub Actions để tự động hóa quy trình deve
 5. **Website** được deploy lên `gh-pages` branch
 6. **GitHub Pages** serve website từ `gh-pages` branch
 
-### Các platform deployment khác
-
-#### Netlify
-
-- Kết nối repository với Netlify
-- Sử dụng file `netlify.toml` để cấu hình
-
-#### Vercel
-
-- Kết nối repository với Vercel
-- Sử dụng file `vercel.json` để cấu hình
-
 ## 📁 Cấu trúc dự án
 
 ```
